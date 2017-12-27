@@ -1,0 +1,78 @@
+\section{Ethan}
+
+\subsection{Aufgabenstellung}
+
+\begin{enumerate}
+    \item Energie in Abhängigkeit des Diederwinkels zeichnen und die Anzahl der Min- bzw. Maxima bestimmen.
+    \item Auswertung der erhaltenen Werte.
+    \item Statistische Fehlerrechnung
+    \item Vergleich der Methoden 
+    \item Schwingungsspektrum und Bestzungszahlen bestimmen.
+    \item Berechnung der Geschwindigkeitskonstante der Rotation 
+\end{enumerate}
+
+\subsection{Diagramm der Rotationsbarrieren}
+Da die beiden Kohlenstoffatome nur über ein $\sigma$-Bindung miteinander verbunden sind, können sich beide Enden frei derehen. Dabei sind 
+manche Winkel energetisch günstiger als Andere. Dies ist gut zu sehen, wenn Ethan in der Newman-Projektion dargestellt wird.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.7]{../src/img/newmanEthan.png}
+    \caption{Newman Darstellung con Ethan}
+\end{figure}
+
+Wie man in Abbildung 1 erkennen kann gibt es zwei Extrema, links sind die H-Atome genau hintereinander angeordnet, es kommt somit zu einer größeren
+Abstoßung der negativ geladenen $sp^3$-Orbitale. Diese Anordnung nennt sich auch ''eclips''. Bei der rechten Darstellung sind die Orbitale weiter
+voneinander entfernt, es können daher nicht zu einer so starke elektrostatischen Abstoßung kommen wie bei der Linken. Diese Anordnung nennt sich ''stacked''.\\
+Mit dem Programm HyperChem wurden in der Laboreinheit, die Energieunterschiede zwischen verschieden Diederwinkel bestimmt. Dabei wurden
+von jedem Zweierteam sechs semiempirische und zwei ab-initio Methoden verwendet (siehe Abbildung 2 und 3).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.7]{../src/img/ethan1.png}
+    \caption{Graphische Darstellung der Energiedifferenz gegen den Diederwinkel}
+\end{figure}
+
+Um alle Graphen auf eine Achse zu skalieren, wurden von allen, mit HyperChem bestimmten Werte für die elektronische Anregung, die geringste
+elektronische Anregung subtrahiert. Dessweiteren sieht man der Graph je vier Maxima und drei Minima bei einer Umdrehung von 360$^\circ$ hat.
+Wenn man bei der linken Anordnung aus Abbildung 1 bei $0^\circ$ anfängt, dann sind die Maxima jeweils bei, $0^\circ$, $120^\circ$, $240^\circ$
+und wieder bei $360^\circ$. Die Minima befinden sich bei $60^\circ$, $180^\circ$ und $300^\circ$.\\
+Weiter ist noch zu sehen, dass alle Methoden verschiedene Ergebnisse liefern, das liegt an der Tatsache, dass jede Methode für eine bestimmte
+Aufgabe optimiert wurde und dann andere Parameter nicht berücksichtigt wurden.
+
+\subsection{Auswertung der erhaltenen Werte}
+Um den Energieunterschied zwischen der gestaffelten und der verdeckten Konformation zu bestimmen, müssen folgende Werte bekannt sein:
+\begin{itemize}
+    \item Die maximale und minimale ZPE (Zero Point Energie).
+    \item Die maximale und minimale Energie der elektronischen Anregung.
+\end{itemize}
+Mit diesen Werten kann über folgende Beziehung bestimmt werden:
+\begin{align*}
+    \Delta \braket{\tilde{e}}(T) &= \Delta e^V (0) + \Delta e^{el} (0) \\
+                                 &= \Delta ZPE + \Delta e^{el}   
+\end{align*} 
+Damit gilt:
+\begin{align}
+    \Delta e_{mol} = \Delta ZPE + \Delta e^{el} 
+\end{align}
+\input{../src/tabellen/ethan.tex}
+
+\subsection{Statistische Fehlerrechnung}
+
+Um den größtfehler von $\Delta e_{mol} = \Delta ZPE + \Delta e^{el} $ zu bestimmen, wird die Gauß'sche Fehlervorpflanzung benutzt.
+
+\begin{align}
+    f(x, y, ...) = \abs{\frac{\delta f}{\delta x}} \cdot \Delta x + \abs{\frac{\delta f}{\delta y}} \cdot \Delta y + ...
+\end{align}
+
+Um die Formel besser lesbar zu machen wird $\Delta e_{mol}$ mit f(x, y) ersetzt.
+
+\begin{align*}
+    f(x, y) = \abs{\frac{\delt x+y}{\delta x}} \cdot \Delta x + \abs{\frac{\delt x+y}{\delta y}} \cdot \Delta y = \Delta x + \Delta y
+\end{align*}
+
+\subsection{Vergleich der Methoden}
+
+\subsection{Schwingungsspektrum und Bestzungszahlen bestimmen}
+
+\subsection{Berechnung der Geschwindigkeitskonstante der Rotation}
