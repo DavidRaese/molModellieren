@@ -1,1 +1,49 @@
 \section{Abstract}
+
+Das Ziel dieser Laborübung ist es mit dem Programm HyperChem die innere Energie (molare Energie) von Ethan und Tetrachlorethan zu bestimmen.
+Diese molare Energie setzt sich aus 
+\begin{align}
+    \tilde{e} = e^{v} + e^{T} + e^{R} + e^{el}
+\end{align}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        $e^{v}$...Schwingungsenergie & $e^{T}$...Translationsenergie \\
+        $e^{R}$...Rotationsenergie & $e^{el}$...Energie der elektrischen Anregung
+    \end{tabular}
+\end{table}
+zusammen.\\
+Wenn man ein Molekül auf 0K abkühlt, fällt die Rotationsenergie und die Translationsenergie auf 0, aber selbst am absolutem Nullpunkt hat ein
+Molekül immer noch Energie in Form von $e^V$ und $e^{el}$ . Diese beiden Formen der Energien werden mit HyperChem bestimmt. \\
+Für diese Bestimmung gibt es zwei verschiedenen Verfahren, einerseits die semiempirischen und andererseits die ab-initio Methoden.
+Der Unterschied zwischen den semiempirischen und den ab-initio Methoden besteht darin, dass bei
+den semiempirischen Methoden experimentell ermittelte Parameter mit in die Berechnung einfließen, aber bei den ab-initio Methoden lediglich die 
+Ortskoordinaten der Atome und die physikalischen Konstanten in der Berechnung verwendung finden. Dabei fällt auf das es eine relativ große Zahl an
+semiempirischen Methoden gibt. Diese Diversität entstand aus dem Drang heraus, für bestimmte Problemstellungen zu optimieren. Im Verlauf der Auswertung
+wird sich zeigen das zwei dieser Methoden für unsere Fragestellung keine korrekten Ergebnisse liefern. \\
+Sobald man dann die Nullpunktsenergien bestimmt hat, kann man über sie durch folgenden Zusammenhang,
+\begin{align}
+    \Delta \braket{\tilde{e}} (T) = \Delta e^V + \Delta e^{el} 
+\end{align}
+den Energieunterschied zwischen den verschiedenen Konstitutionen (gestaffelt oder verdeckt) bestimmen, da die temperaturabhängigen Beiträge der
+Translation und Rotation sich gegenseitig aufheben. 
+Eine besonders wichtige Energieform für die Chemie ist die Schwingungsenergie, da die Manipulation (Anregung) von Schwingungen der Moleküle durch
+Licht die Grundlage der Spektroskopie bildet. Dabei geht das Molekül, welches eine Grundschwingung besitzt in ein Schwingungsmuster über, welches 
+mehr Energie benötigt. Da man diese Anregung auch thermisch erreichen kann, kann man über folgende Beziehung den Energieunterschied zwischen 
+angeregtem und nicht angeregtem Zustand berechnen.
+\begin{align}
+    \Delta E = k_b T
+\end{align}
+Da nicht alle Teilchen immer gleich viel Energie haben, sich also nie alle Moleküle in einem angeregtem Zustand befinden können ist es wichtig
+die Verteilung zwischen den Zuständen zu kennen. Für diese statistische Berechnung wird oft die Bolzmann-Verteilung zugrunde gelegt.
+\begin{align}
+    n_i = \frac{N_i}{N_0} = e^{-\frac{\Delta E}{k_b T}}
+\end{align} 
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        $n_i$...Verteilungsunterschied & $N_i$...Teilchen im angeregtem Zustand \\
+        $N_0$...Teilchen im Grundzustand & $k_b$...Bolzmannkonstante
+    \end{tabular}
+\end{table}
