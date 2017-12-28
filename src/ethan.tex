@@ -18,8 +18,9 @@ manche Winkel energetisch günstiger als Andere. Dies ist gut zu sehen, wenn Eth
 \begin{figure}[H]
     \centering
     \includegraphics[scale=.7]{../src/img/newmanEthan.png}
-    \caption{Newman Darstellung con Ethan}
+    \caption{Newman Darstellung von Ethan}
 \end{figure}
+
 
 Wie man in Abbildung 1 erkennen kann gibt es zwei Extrema, links sind die H-Atome genau hintereinander angeordnet, es kommt somit zu einer größeren
 Abstoßung der negativ geladenen $sp^3$-Orbitale. Diese Anordnung nennt sich auch ''eclips''. Bei der rechten Darstellung sind die Orbitale weiter
@@ -30,7 +31,13 @@ von jedem Zweierteam sechs semiempirische und zwei ab-initio Methoden verwendet 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=.7]{../src/img/ethan1.png}
-    \caption{Graphische Darstellung der Energiedifferenz gegen den Diederwinkel}
+    \caption{Ethan}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.9]{../src/img/ethan2.png}
+    \caption{Ethan}
 \end{figure}
 
 Um alle Graphen auf eine Achse zu skalieren, wurden von allen, mit HyperChem bestimmten Werte für die elektronische Anregung, die geringste
@@ -59,20 +66,85 @@ Damit gilt:
 
 \subsection{Statistische Fehlerrechnung}
 
-Um den größtfehler von $\Delta e_{mol} = \Delta ZPE + \Delta e^{el} $ zu bestimmen, wird die Gauß'sche Fehlervorpflanzung benutzt.
+Um den Größtfehler von $\Delta e_{mol} = \Delta ZPE + \Delta e^{el} $ zu bestimmen, wird die Gauß'sche Formel zur Fehlervorpflanzung benutzt.
 
 \begin{align}
     f(x, y, ...) = \abs{\frac{\delta f}{\delta x}} \cdot \Delta x + \abs{\frac{\delta f}{\delta y}} \cdot \Delta y + ...
 \end{align}
 
-Um die Formel besser lesbar zu machen wird $\Delta e_{mol}$ mit f(x, y) ersetzt.
+Um die Formel besser lesbar zu machen, wird $\Delta e_{mol}$ mit f(x, y) ersetzt.
 
+% \begin{align*}
+%     f(x, y) = \abs{\frac{\delt x+y}{\delta x}} \cdot \Delta x + \abs{\frac{\delta x+y}{\delta y}} \cdot \Delta y = \Delta x + \Delta y
+% \end{align*}
 \begin{align*}
-    f(x, y) = \abs{\frac{\delt x+y}{\delta x}} \cdot \Delta x + \abs{\frac{\delt x+y}{\delta y}} \cdot \Delta y = \Delta x + \Delta y
+    f(x, y) =  \abs{\frac{\delta (x + y)}{\delta x}} \cdot \Delta x + \abs{\frac{\delta (x + y)}{\delta y}} \cdot \Delta y = \Delta x + \Delta y
 \end{align*}
 
 \subsection{Vergleich der Methoden}
 
-\subsection{Schwingungsspektrum und Bestzungszahlen bestimmen}
+Die ZINDOS Methode ist für unsere Fragestellung nicht brauchbar, da dass Ergebniss darauf schließen lässt, dass die Energie der gestaffelten Konformation
+höher ist als in der Verdeckten. Dieses Ergebniss wiederspricht den physikalischen Grundlagen dieses Versuches. 
 
+\subsection{Bestimmung des Schwingungsspektrum}
+Zur Bestimmung der Schwingungsspektren wurden drei Schwingungsarten bei verschiedenen Wellenzahlen notiert.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cl}
+        \toprule 
+        Wellenzahl [$cm^{-1}$] & Schwingungsart \\
+        \midrule
+        275,1	& Drehschwingung der Methylgruppe \\
+        1369,2	& Asymmetrische C-H Streckschwingung \\
+        2121,7	& Symmetrische Streckschwingung  \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+Ausgehend von der Wellenzahl wird die Wellenlänge wie folgend berechnet:
+\begin{align}
+    \lambda = \frac{1}{Wellenzahl} \cdot 10^7
+\end{align}
+
+Die Energie wird über die Planck-Einstein-Korrelation berechnet:
+\begin{align}
+    E = \frac{hc}{\lambda}
+\end{align}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        $h...Plancksches Wirkungsquantum \, [J/s]$ & $c...Lichtgeschwindigkeit \, [m/s]$ \\
+        $\lambda...Wellenlänge \, [m]$ &  \\
+    \end{tabular}
+\end{table}
+Die Temperatur wird dann schließlich mit folgender Formel berechnet:
+\begin{align*}
+    \Delta E = k_b T \\
+    T = \frac{\Delta E}{k_b}
+\end{align*}
+\input{../src/tabellen/schwingungen.tex}
+
+\subsection{Bestimmung Bestzungszahlen}
+
+Um auf die Besetzungszahl zu kommen wird ein Energiedifferenzwert gewählt an dem die Berechnung durchgeführt wird und eine Temperatur. Die Besetzungszahl gibt das Verhältnis zwischen den Molekülen die bei dieser Temperatur den angeregten Energiezustand und denen die den Ausgangszustand besetzen.
+In diesem Fall wird mit der Energie der Drehschwingung der Methygruppe und den Temperaturen: $\approx$0K, 293,15 K und 473,15 K gerechnet.
+Die Formel zur Berechnung lautet:
+\begin{align}
+    n_i = \frac{N_i}{N_0} = e^{\frac{-\Delta E}{k_b T}}
+\end{align}
+
+\input{../src/tabellen/besetzungszahlen.tex}
 \subsection{Berechnung der Geschwindigkeitskonstante der Rotation}
+
+Die Geschwindigkeitskonstante gibt hier an, in welcher Geschwindigkeit das Molekül zwischen den Zuständen fluktuiert. \\
+Der $\Delta G$-Wert von Ethan wurde bestimmt, indem die Differenz zwischen Maximum und Minimum der Freien Gibbschen Enthalphie bei 293,15 K gebildet wird.
+\begin{align*}
+    \Delta G = (-7714.95 - -7715.74) kcal/mol = 0.79 kcal/mol = 3.305 kJ/mol  
+\end{align*}
+Daraus lässt sich nun aus dieser Formel die Geschwindigkeitskonstante bestimmen:
+\begin{align}
+    K = \frac{k_b T}{h} \cdot e^{\frac{- \Delta G}{RT}}
+\end{align}
+
+Daraus folgt durch einsetzen: $K = 1.57 \cdot 10^{-12} s^{-1}$
