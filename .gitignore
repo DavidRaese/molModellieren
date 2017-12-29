@@ -9,3 +9,4 @@
 /main/*.synctex.gz
 */**/*.log
 /.vscode
+/main/main.synctex.gz(busy)
